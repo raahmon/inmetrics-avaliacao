@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "20938529-7d24-4228-9a91-d70f7a9418bc",
+		"name": "Avaliacao Inmetrics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20079399",
+		"_collection_link": "https://bold-equinox-270577.postman.co/workspace/testes~ed24561e-7d4a-4cf9-9ce6-899082e68bc7/collection/20079399-20938529-7d24-4228-9a91-d70f7a9418bc?action=share&source=collection_link&creator=20079399"
+	},
+	"item": [
+		{
+			"name": "All Products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var produtotId = pm.response.json().products[2].productId\r",
+							"\r",
+							"pm.environment.set(\"productId\", produtotId)\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.advantageonlineshopping.com/catalog/api/v1/products",
+					"protocol": "https",
+					"host": [
+						"www",
+						"advantageonlineshopping",
+						"com"
+					],
+					"path": [
+						"catalog",
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Id Product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://www.advantageonlineshopping.com/catalog/api/v1/products/15",
+					"protocol": "https",
+					"host": [
+						"www",
+						"advantageonlineshopping",
+						"com"
+					],
+					"path": [
+						"catalog",
+						"api",
+						"v1",
+						"products",
+						"15"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
